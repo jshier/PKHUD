@@ -86,9 +86,9 @@ internal class Window: UIWindow {
     
     internal func showBackground(animated anim: Bool) {
         if anim {
-            UIView.animate(withDuration: 0.175, animations: {
+            UIView.animate(withDuration: 0.175) {
                 self.backgroundView.alpha = 1.0
-            }) 
+            }
         } else {
             backgroundView.alpha = 1.0
         }
@@ -96,9 +96,9 @@ internal class Window: UIWindow {
     
     internal func hideBackground(animated anim: Bool) {
         if anim {
-            UIView.animate(withDuration: 0.65, animations: {
+            UIView.animate(withDuration: 0.65) {
                 self.backgroundView.alpha = 0.0
-            }) 
+            }
         } else {
             backgroundView.alpha = 0.0
         }

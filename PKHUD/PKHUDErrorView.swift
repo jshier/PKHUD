@@ -62,24 +62,24 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         }
         
         animation.fromValue = 0.0
-        animation.toValue = angle * CGFloat(M_PI / 180.0)
+        animation.toValue = angle * CGFloat(.pi / 180.0)
         animation.duration = 1.0
         animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         return animation
     }
     
-    func startAnimation() {
+    open func startAnimation() {
         let dashOneAnimation = rotationAnimation(-45.0)
         let dashTwoAnimation = rotationAnimation(45.0)
         
-        dashOneLayer.transform = CATransform3DMakeRotation(-45 * CGFloat(M_PI/180), 0.0, 0.0, 1.0)
-        dashTwoLayer.transform = CATransform3DMakeRotation(45 * CGFloat(M_PI/180), 0.0, 0.0, 1.0)
+        dashOneLayer.transform = CATransform3DMakeRotation(-45 * (.pi / 180), 0.0, 0.0, 1.0)
+        dashTwoLayer.transform = CATransform3DMakeRotation(45 * (.pi / 180), 0.0, 0.0, 1.0)
         
         dashOneLayer.add(dashOneAnimation, forKey: "dashOneAnimation")
         dashTwoLayer.add(dashTwoAnimation, forKey: "dashTwoAnimation")
     }
 
-    func stopAnimation() {
+    open func stopAnimation() {
         dashOneLayer.removeAnimation(forKey: "dashOneAnimation")
         dashTwoLayer.removeAnimation(forKey: "dashTwoAnimation")
     }
